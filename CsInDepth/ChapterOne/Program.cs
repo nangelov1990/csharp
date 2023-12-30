@@ -2,7 +2,9 @@
 using System.Collections;
 
 List<Product> products = Product.GetSampleProducts();
-products.Sort(new ProductNameComparer());
+products.Sort(delegate (Product x, Product y)
+    { return x.Name.CompareTo(y.Name); }
+);
 foreach (Product product in products)
 {
     Console.WriteLine(product);
