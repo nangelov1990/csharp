@@ -2,8 +2,7 @@
 using System.Collections;
 
 List<Product> products = Product.GetSampleProducts();
-products.Sort((x, y) => x.Name.CompareTo(y.Name));
-foreach (Product product in products)
+foreach (Product product in products.OrderBy(p => p.Name))
 {
     Console.WriteLine(product);
 }
