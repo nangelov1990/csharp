@@ -2,5 +2,7 @@
 using System.Collections;
 
 List<Product> products = Product.GetSampleProducts();
-products.FindAll(delegate(Product p) { return p.Price > 10m; })
-        .ForEach(Console.WriteLine);
+foreach (Product product in products.Where(p => p.Price > 10))
+{
+    Console.WriteLine(product);
+}
