@@ -2,7 +2,9 @@
 using System.Collections;
 
 List<Product> products = Product.GetSampleProducts();
-foreach (Product product in products.OrderBy(p => p.Name))
-{
-    Console.WriteLine(product);
-}
+
+Predicate<Product> test = delegate(Product p) { return p.Price > 10m; };
+List<Product> matches = products.FindAll(test);
+
+Action<Product> print = Console.WriteLine;
+matches.ForEach(print);
