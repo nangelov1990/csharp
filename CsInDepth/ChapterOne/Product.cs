@@ -8,7 +8,7 @@ public class Product
     readonly decimal? price;
     public decimal? Price { get { return price; } }
     
-    public Product(string name, decimal? price)
+    public Product(string name, decimal? price = null)
     {
         this.name = name;
         this.price = price;
@@ -22,7 +22,7 @@ public class Product
             new Product(name: "Assassins", price: 14.99m),
             new Product(name: "Frogs", price: 13.99m),
             new Product(name: "Sweeney Todd", price: 10.99m),
-            new Product(name: "Not Released", price: null)
+            new Product(name: "Not Released")
         };
     }
 
