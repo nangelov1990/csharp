@@ -2,7 +2,7 @@
 using System.Collections;
 
 List<Product> products = Product.GetSampleProducts();
-foreach (Product product in products.Where(p => p.Price > 10))
+foreach (Product product in products.Where(p => p.Price == null))
 {
     Console.WriteLine(product);
 }
